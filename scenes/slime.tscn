@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://biydspjmwnk52"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qxtkl"]
+[ext_resource type="Texture2D" uid="uid://kaqd8d5r8wfr" path="res://icon.svg" id="2_uj2xj"]
+[ext_resource type="PackedScene" uid="uid://c2mkew5m58fta" path="res://scenes/enemy_hitbox.tscn" id="3_ojgjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s412j"]
+size = Vector2(128, 128)
+
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_qxtkl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_uj2xj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s412j")
+
+[node name="EnemyHitbox" parent="." instance=ExtResource("3_ojgjr")]
+visible = false

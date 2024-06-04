@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvwourjvb6idw"]
+[gd_scene load_steps=6 format=3 uid="uid://bvwourjvb6idw"]
 
 [ext_resource type="Texture2D" uid="uid://kaqd8d5r8wfr" path="res://icon.svg" id="1_pn5to"]
 [ext_resource type="PackedScene" uid="uid://cxiu7wnj6y1n3" path="res://scenes/player.tscn" id="2_68uuv"]
+[ext_resource type="PackedScene" uid="uid://biydspjmwnk52" path="res://scenes/slime.tscn" id="3_jv6ld"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_datxc"]
 resource_name = "default"
@@ -26,4 +27,16 @@ position = Vector2(570, 339)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jq57t")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0)
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 196616, 0, 0, 131080, 0, 0, 65544, 0, 0, 8, 0, 0)
+
+[node name="Slime" parent="." instance=ExtResource("3_jv6ld")]
+position = Vector2(260, 344)
+
+[node name="Slime2" parent="." instance=ExtResource("3_jv6ld")]
+position = Vector2(777, 292)
+
+[node name="Slime3" parent="." instance=ExtResource("3_jv6ld")]
+position = Vector2(914, 293)
+
+[node name="Slime4" parent="." instance=ExtResource("3_jv6ld")]
+position = Vector2(845, 429)
