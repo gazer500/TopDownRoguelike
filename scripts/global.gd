@@ -1,6 +1,6 @@
 extends Node
 
-const TILE_SIZE = 128
+const TILE_SIZE = 8
 
 var move_input := Vector2.ZERO
 

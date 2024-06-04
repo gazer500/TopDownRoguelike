@@ -21,9 +21,9 @@ var _on_cooldown := false
 
 var weapon_stats = {
 	"damage": 1,
-	"range": 3.5,
+	"range": 12,
 	"pierce": 2,
-	"proj_speed": 6,
+	"proj_speed": 40,
 	"attack_delay": 0.5,
 }
 
