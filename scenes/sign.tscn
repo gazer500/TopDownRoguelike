@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtm77puy02tfk"]
+
+[ext_resource type="PackedScene" uid="uid://dr3gw51cf4h5w" path="res://scenes/text_display.tscn" id="1_cdvl5"]
+[ext_resource type="Texture2D" uid="uid://bhny860p5v8xy" path="res://sprites/Sign.png" id="2_a0pc1"]
+[ext_resource type="Script" path="res://scripts/sign.gd" id="2_ugp0e"]
+[ext_resource type="FontFile" uid="uid://bjfatgih1ms7h" path="res://fonts/FFFFORWA.TTF" id="3_ifr4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_il8lr"]
+size = Vector2(40, 40)
+
+[node name="Sign" node_paths=PackedStringArray("label") instance=ExtResource("1_cdvl5")]
+script = ExtResource("2_ugp0e")
+text = "hello"
+label = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_a0pc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_il8lr")
+
+[node name="Label" type="Label" parent="." index="2"]
+z_index = 4
+offset_left = -51.0
+offset_top = -53.0
+offset_right = 52.0
+offset_bottom = -14.0
+theme_override_fonts/font = ExtResource("3_ifr4d")
+theme_override_font_sizes/font_size = 8
+text = "Enter message in parent.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
