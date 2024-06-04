@@ -1,5 +1,7 @@
 extends Node
 
+const TILE_SIZE = 128
+
 var move_input := Vector2.ZERO
 
 func _process(delta):

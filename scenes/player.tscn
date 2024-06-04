@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxiu7wnj6y1n3"]
+[gd_scene load_steps=6 format=3 uid="uid://cxiu7wnj6y1n3"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_151nc"]
 [ext_resource type="Script" path="res://scripts/player_sm.gd" id="2_eupfi"]
 [ext_resource type="Texture2D" uid="uid://kaqd8d5r8wfr" path="res://icon.svg" id="2_hyeoi"]
+[ext_resource type="PackedScene" uid="uid://dt7hrkl4s0vk5" path="res://scenes/pistol.tscn" id="4_pk5po"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_np0s5"]
 size = Vector2(128, 128)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_151nc")
 
@@ -19,3 +22,5 @@ texture = ExtResource("2_hyeoi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_np0s5")
+
+[node name="Pistol" parent="." instance=ExtResource("4_pk5po")]
