@@ -29,16 +29,6 @@ func _physics_process(delta):
 	if _initial_position.distance_to(position) > proj_stats["range"] * Global.TILE_SIZE:
 		queue_free()
 	
-	#if is_instance_valid(collision):
-		#var collider = collision.get_collider()
-		#if collider is Enemy:
-			#_remaining_pierce -= 1
-			#if _remaining_pierce <= 0:
-				#queue_free()
-			#
-			#collider.enemy_recieve_damage(proj_stats["damage"])
-		#else:
-			#queue_free()
 
 
 func _on_body_entered(body):

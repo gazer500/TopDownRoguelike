@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0qyr6h0msqlf"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_s53td"]
+[ext_resource type="Texture2D" uid="uid://3frneswh8igi" path="res://sprites/SmallSlime.png" id="2_f58uf"]
+[ext_resource type="Script" path="res://scripts/slime_sm.gd" id="2_xypqq"]
+[ext_resource type="PackedScene" uid="uid://c2mkew5m58fta" path="res://scenes/enemy_hitbox.tscn" id="3_j2atx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lcml"]
+size = Vector2(8, 8)
+
+[node name="SmallSlime" type="CharacterBody2D"]
+script = ExtResource("1_s53td")
+move_speed = 25
+
+[node name="SlimeStateMachine" type="Node" parent="."]
+script = ExtResource("2_xypqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f58uf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8lcml")
+
+[node name="EnemyHitbox" parent="." instance=ExtResource("3_j2atx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHitbox"]
+shape = SubResource("RectangleShape2D_8lcml")

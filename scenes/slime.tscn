@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://biydspjmwnk52"]
+[gd_scene load_steps=6 format=3 uid="uid://biydspjmwnk52"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qxtkl"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_emh13"]
+[ext_resource type="Script" path="res://scripts/slime_sm.gd" id="2_fmng3"]
 [ext_resource type="Texture2D" uid="uid://dbh15qen5sdfy" path="res://sprites/Slime.png" id="2_phbyn"]
 [ext_resource type="PackedScene" uid="uid://c2mkew5m58fta" path="res://scenes/enemy_hitbox.tscn" id="3_ojgjr"]
 
@@ -10,10 +11,13 @@ size = Vector2(16, 16)
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 4
 motion_mode = 1
-script = ExtResource("1_qxtkl")
+script = ExtResource("1_emh13")
+move_speed = 50
+
+[node name="SlimeStateMachine" type="Node" parent="."]
+script = ExtResource("2_fmng3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_phbyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
