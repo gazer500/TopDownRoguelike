@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvwourjvb6idw"]
+[gd_scene load_steps=9 format=3 uid="uid://bvwourjvb6idw"]
 
 [ext_resource type="Script" path="res://scripts/floor.gd" id="1_a7ml4"]
 [ext_resource type="PackedScene" uid="uid://b57hmx6n8jvwq" path="res://scenes/default_ui.tscn" id="1_ijilg"]
 [ext_resource type="PackedScene" uid="uid://cxiu7wnj6y1n3" path="res://scenes/player.tscn" id="2_68uuv"]
 [ext_resource type="PackedScene" uid="uid://biydspjmwnk52" path="res://scenes/slime.tscn" id="3_jv6ld"]
 [ext_resource type="PackedScene" uid="uid://dtm77puy02tfk" path="res://scenes/sign.tscn" id="5_sjtb5"]
+[ext_resource type="PackedScene" uid="uid://bcdh1carghsgg" path="res://scenes/weapon_pickup.tscn" id="6_84vv7"]
+[ext_resource type="PackedScene" uid="uid://xowyueq65iye" path="res://scenes/shotgun.tscn" id="7_k5u8e"]
+[ext_resource type="Texture2D" uid="uid://cd83isfx70cme" path="res://sprites/Shotgun.png" id="8_cayst"]
 
 [node name="Test" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_a7ml4")
@@ -29,3 +32,12 @@ position = Vector2(237, 179)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="WeaponPickup" parent="." instance=ExtResource("6_84vv7")]
+position = Vector2(84, 202)
+collision_layer = 0
+collision_mask = 2
+weapon = ExtResource("7_k5u8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="WeaponPickup"]
+texture = ExtResource("8_cayst")

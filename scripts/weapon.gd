@@ -37,15 +37,16 @@ func _physics_process(delta):
 	)
 	
 	if fire_button_active and not _on_cooldown:
-		spawn_projectile()
+		spawn_projectile(init_projectile())
 		_on_cooldown = true
 		await get_tree().create_timer(weapon_stats["attack_delay"] * player.player_stats["attack_delay_mult"]).timeout
 		_on_cooldown = false
 
-
-func spawn_projectile():
+func init_projectile():
 	var instance = projectile.instantiate()
 	instance.global_position = global_position
+	var angle = global_position.angle_to_point(get_global_mouse_position())
+	instance.move_direction = Vector2(cos(angle), sin(angle))
 	
 	var new_stats = {}
 	if player != null:
@@ -55,4 +56,8 @@ func spawn_projectile():
 		new_stats["proj_speed"] = weapon_stats["proj_speed"]
 	
 	instance.proj_stats = new_stats
+	
+	return instance
+
+func spawn_projectile(instance):
 	player.add_sibling(instance)

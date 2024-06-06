@@ -1,8 +1,8 @@
 extends StateMachine
 class_name SlimeSM
 
-@export var chase_range := 8
-@export var idle_range := 16
+@export var chase_range := 60
+@export var idle_range := 600
 @onready var player : Player = get_tree().get_first_node_in_group("player")
 
 func _ready():

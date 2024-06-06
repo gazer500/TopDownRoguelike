@@ -18,8 +18,6 @@ var velocity := Vector2.ZERO
 
 
 func _ready():
-	var angle = global_position.angle_to_point(get_global_mouse_position())
-	move_direction = Vector2(cos(angle), sin(angle))
 	velocity = move_direction * proj_stats["proj_speed"] * Global.TILE_SIZE
 
 

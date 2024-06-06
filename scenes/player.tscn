@@ -91,6 +91,8 @@ motion_mode = 1
 script = ExtResource("1_151nc")
 move_speed = 100
 
+[node name="Pistol" parent="." instance=ExtResource("4_pk5po")]
+
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource("2_eupfi")
 
@@ -100,5 +102,3 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_np0s5")
-
-[node name="Pistol" parent="." instance=ExtResource("4_pk5po")]
