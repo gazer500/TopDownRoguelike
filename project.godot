@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Top Down Roguelike"
-run/main_scene="res://scenes/test.tscn"
+run/main_scene="res://scenes/tutorial.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

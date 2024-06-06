@@ -17,7 +17,7 @@ func enemy_recieve_damage(damage = 1):
 	
 	if current_hp <= 0:
 		var instance = death_effect.instantiate()
-		instance.global_position = global_position
+		instance.position = position
 		add_sibling(instance)
 		
 		call_deferred("_on_death")

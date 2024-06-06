@@ -21,7 +21,7 @@ func _on_death():
 			3:
 				direction = Vector2.DOWN
 		
-		instance.global_position = global_position + offset * Global.TILE_SIZE * direction
+		instance.position = position + offset * Global.TILE_SIZE * direction
 		add_sibling(instance)
 	
 

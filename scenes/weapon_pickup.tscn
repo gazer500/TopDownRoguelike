@@ -6,6 +6,8 @@
 size = Vector2(24, 24)
 
 [node name="WeaponPickup" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_ry02m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

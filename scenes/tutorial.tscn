@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://chhtpx3kme177"]
+
+[ext_resource type="Script" path="res://scripts/floor.gd" id="1_8elrr"]
+[ext_resource type="PackedScene" uid="uid://ca7ga42xhqjqd" path="res://scenes/room.tscn" id="2_1ba6k"]
+[ext_resource type="PackedScene" uid="uid://dtm77puy02tfk" path="res://scenes/sign.tscn" id="3_21t6h"]
+[ext_resource type="PackedScene" uid="uid://b0qyr6h0msqlf" path="res://scenes/small_slime.tscn" id="4_61gma"]
+[ext_resource type="PackedScene" uid="uid://b57hmx6n8jvwq" path="res://scenes/default_ui.tscn" id="5_hrfku"]
+[ext_resource type="PackedScene" uid="uid://bcdh1carghsgg" path="res://scenes/weapon_pickup.tscn" id="6_3etnn"]
+[ext_resource type="PackedScene" uid="uid://dt7hrkl4s0vk5" path="res://scenes/pistol.tscn" id="7_eya8k"]
+[ext_resource type="Texture2D" uid="uid://cn6j3o0x8y2xr" path="res://sprites/Pistol.png" id="8_jafyk"]
+[ext_resource type="PackedScene" uid="uid://biydspjmwnk52" path="res://scenes/slime.tscn" id="9_rmgy8"]
+[ext_resource type="PackedScene" uid="uid://xowyueq65iye" path="res://scenes/shotgun.tscn" id="10_7gjyd"]
+[ext_resource type="Texture2D" uid="uid://cd83isfx70cme" path="res://sprites/Shotgun.png" id="11_pbw03"]
+
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_8elrr")
+camera = NodePath("Camera2D")
+
+[node name="Room" parent="." instance=ExtResource("2_1ba6k")]
+
+[node name="Sign" parent="Room" instance=ExtResource("3_21t6h")]
+position = Vector2(240, 160)
+text = "Welcome to the tutorial! Use WASD to move."
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Room2" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(480, 0)
+
+[node name="SmallSlime" parent="Room2" instance=ExtResource("4_61gma")]
+position = Vector2(96, 64)
+
+[node name="SmallSlime2" parent="Room2" instance=ExtResource("4_61gma")]
+position = Vector2(384, 64)
+
+[node name="SmallSlime3" parent="Room2" instance=ExtResource("4_61gma")]
+position = Vector2(96, 256)
+
+[node name="SmallSlime4" parent="Room2" instance=ExtResource("4_61gma")]
+position = Vector2(384, 256)
+
+[node name="Sign" parent="Room2" instance=ExtResource("3_21t6h")]
+position = Vector2(240, 160)
+text = "Find a weapon to defend yourself!"
+
+[node name="DefaultUI" parent="." instance=ExtResource("5_hrfku")]
+
+[node name="Room3" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(480, 320)
+
+[node name="WeaponPickup" parent="Room3" instance=ExtResource("6_3etnn")]
+position = Vector2(240, 160)
+weapon = ExtResource("7_eya8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Room3/WeaponPickup"]
+texture = ExtResource("8_jafyk")
+
+[node name="Sign" parent="Room3" instance=ExtResource("3_21t6h")]
+position = Vector2(240, 112)
+text = "Walk over the weapon to pick it up."
+
+[node name="Room4" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(480, 640)
+
+[node name="Sign" parent="Room4" instance=ExtResource("3_21t6h")]
+position = Vector2(240, 120)
+text = "Hold Left Click to attack towards your cursor."
+
+[node name="Slime" parent="Room4" instance=ExtResource("9_rmgy8")]
+position = Vector2(240, 264)
+
+[node name="SmallSlime" parent="Room4" instance=ExtResource("4_61gma")]
+position = Vector2(200, 264)
+
+[node name="SmallSlime2" parent="Room4" instance=ExtResource("4_61gma")]
+position = Vector2(280, 264)
+
+[node name="Room5" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(480, 960)
+
+[node name="Slime" parent="Room5" instance=ExtResource("9_rmgy8")]
+position = Vector2(160, 160)
+
+[node name="Slime2" parent="Room5" instance=ExtResource("9_rmgy8")]
+position = Vector2(312, 160)
+
+[node name="Room6" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(960, 960)
+
+[node name="WeaponPickup" parent="Room6" instance=ExtResource("6_3etnn")]
+position = Vector2(240, 160)
+weapon = ExtResource("10_7gjyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Room6/WeaponPickup"]
+texture = ExtResource("11_pbw03")
+
+[node name="Sign2" parent="Room6" instance=ExtResource("3_21t6h")]
+position = Vector2(136, 160)
+text = "Pick this up to replace the pistol with a shotgun!"
+
+[node name="Room7" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(480, 1280)
+
+[node name="Sign2" parent="Room7" instance=ExtResource("3_21t6h")]
+position = Vector2(240, -56)
+text = "Try finding a stronger weapon to defend this upcoming swarm."
+
+[node name="Slime" parent="Room7" instance=ExtResource("9_rmgy8")]
+position = Vector2(120, 152)
+
+[node name="Slime2" parent="Room7" instance=ExtResource("9_rmgy8")]
+position = Vector2(176, 224)
+
+[node name="Slime3" parent="Room7" instance=ExtResource("9_rmgy8")]
+position = Vector2(240, 152)
+
+[node name="Slime4" parent="Room7" instance=ExtResource("9_rmgy8")]
+position = Vector2(296, 224)
+
+[node name="Slime5" parent="Room7" instance=ExtResource("9_rmgy8")]
+position = Vector2(360, 152)
+
+[node name="SmallSlime" parent="Room7" instance=ExtResource("4_61gma")]
+position = Vector2(168, 184)
+
+[node name="SmallSlime2" parent="Room7" instance=ExtResource("4_61gma")]
+position = Vector2(240, 192)
+
+[node name="SmallSlime3" parent="Room7" instance=ExtResource("4_61gma")]
+position = Vector2(304, 184)
+
+[node name="Room8" parent="." instance=ExtResource("2_1ba6k")]
+position = Vector2(0, 1280)
+
+[node name="Sign" parent="Room8" instance=ExtResource("3_21t6h")]
+position = Vector2(240, 160)
+text = "Congratulations! You finished the tutorial!"

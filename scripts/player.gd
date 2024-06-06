@@ -3,11 +3,11 @@ class_name Player
 
 @export var max_hp := 6
 @export var inv_timer := 1
-var player_stats = {
-	"damage_mult": 1.5,
+@export var player_stats = {
+	"damage_mult": 1,
 	"range_mod": 10,
-	"pierce_mod": 1,
-	"attack_delay_mult": 0.8,
+	"pierce_mod": 0,
+	"attack_delay_mult": 1,
 }
 
 @onready var current_hp = max_hp

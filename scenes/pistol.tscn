@@ -6,9 +6,9 @@
 script = ExtResource("1_80a6g")
 attack_type = 1
 weapon_stats = {
-"attack_delay": 0.8,
+"attack_delay": 0.6,
 "damage": 1.0,
-"pierce": 2,
+"pierce": 4,
 "proj_speed": 40,
 "range": 6
 }

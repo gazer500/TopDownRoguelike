@@ -23,7 +23,7 @@ shape = SubResource("RectangleShape2D_il8lr")
 [node name="Label" type="Label" parent="." index="2"]
 z_index = 4
 offset_left = -51.0
-offset_top = -53.0
+offset_top = -85.0
 offset_right = 52.0
 offset_bottom = -14.0
 theme_override_fonts/font = ExtResource("3_ifr4d")
