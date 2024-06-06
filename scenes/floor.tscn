@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ch3iegirgx4"]
+
+[ext_resource type="Script" path="res://scripts/floor.gd" id="1_onrt8"]
+
+[node name="Floor" type="Node2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_onrt8")
+camera = NodePath("Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 159)
+anchor_mode = 0

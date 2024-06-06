@@ -10,10 +10,12 @@ func _ready():
 
 
 func _on_body_entered(body):
-	if label != null:
-		label.show()
+	if body is Player:
+		if label != null:
+			label.show()
 
 
 func _on_body_exited(body):
-	if label != null:
-		label.hide()
+	if body is Player:
+		if label != null:
+			label.hide()

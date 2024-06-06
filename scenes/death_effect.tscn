@@ -47,7 +47,6 @@ animations = [{
 }]
 
 [node name="DeathEffect" type="AnimatedSprite2D"]
-modulate = Color(1, 0, 0, 1)
 sprite_frames = SubResource("SpriteFrames_28ama")
 script = ExtResource("2_l6n82")
 

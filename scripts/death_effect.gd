@@ -1,4 +1,6 @@
 extends AnimatedSprite2D
+class_name DeathEffect
+
 
 func _ready():
 	play("default")

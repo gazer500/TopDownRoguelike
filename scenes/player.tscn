@@ -1,30 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxiu7wnj6y1n3"]
+[gd_scene load_steps=16 format=3 uid="uid://cxiu7wnj6y1n3"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_151nc"]
 [ext_resource type="Script" path="res://scripts/player_sm.gd" id="2_eupfi"]
-[ext_resource type="Texture2D" uid="uid://bu3fx7yttinw0" path="res://sprites/DeathEffect.png" id="3_3uyy3"]
 [ext_resource type="Texture2D" uid="uid://dgt77vbvma7ha" path="res://sprites/Player.png" id="3_5gh3c"]
 [ext_resource type="PackedScene" uid="uid://dt7hrkl4s0vk5" path="res://scenes/pistol.tscn" id="4_pk5po"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_unvno"]
-atlas = ExtResource("3_3uyy3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_af4pn"]
-atlas = ExtResource("3_3uyy3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2xke"]
-atlas = ExtResource("3_3uyy3")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sstts"]
-atlas = ExtResource("3_3uyy3")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_umyvk"]
-atlas = ExtResource("3_3uyy3")
-region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5ms4"]
 atlas = ExtResource("3_5gh3c")
@@ -64,26 +43,6 @@ region = Rect2(8, 16, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_81xti"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_unvno")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_af4pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w2xke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sstts")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_umyvk")
-}],
-"loop": false,
-"name": &"death",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a5ms4")
@@ -137,11 +96,9 @@ script = ExtResource("2_eupfi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_81xti")
-animation = &"death"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_np0s5")
 
 [node name="Pistol" parent="." instance=ExtResource("4_pk5po")]
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="PlayerStateMachine" method="_on_animation_finished"]

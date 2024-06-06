@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca7ga42xhqjqd"]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_f6vr4"]
+[ext_resource type="Texture2D" uid="uid://bcnkgr1pf1h1" path="res://sprites/Tiles.png" id="1_l72ap"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awrfv"]
+texture = ExtResource("1_l72ap")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, -4, -3, 4, -3, 4, -4)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, -4, -3, 4, -3, 4, -4)
+1:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-4, 3, -4, 4, 4, 4, 4, 3)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, -3, -3, -3, -3, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, -3, -3, -3, -3, 3, 4, 3, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_ugbxm"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 6
+sources/0 = SubResource("TileSetAtlasSource_awrfv")
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_f6vr4")
+valid_room_locatiom = {
+Vector2(-1, 0): true,
+Vector2(0, -1): true,
+Vector2(0, 1): true,
+Vector2(1, 0): true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 2
+tile_set = SubResource("TileSet_ugbxm")
+format = 2
+layer_0/tile_data = PackedInt32Array(2359351, 0, 2, 2359301, 0, 2, 2359302, 0, 2, 2359303, 0, 2, 2359304, 0, 2, 2359305, 0, 2, 2359306, 0, 2, 2359307, 0, 2, 2359308, 0, 2, 2359309, 0, 2, 2359310, 0, 2, 2359311, 0, 2, 2359312, 0, 2, 2359313, 0, 2, 2359314, 0, 2, 2359315, 0, 2, 2359316, 0, 2, 2359317, 0, 2, 2359318, 0, 2, 2359319, 0, 2, 2359320, 0, 2, 2359321, 0, 2, 2359322, 0, 2, 2359323, 0, 2, 2359324, 0, 2, 2359327, 0, 2, 2359328, 0, 2, 2359329, 0, 2, 2359330, 0, 2, 2359331, 0, 2, 2359332, 0, 2, 2359333, 0, 2, 2359334, 0, 2, 2359335, 0, 2, 2359336, 0, 2, 2359337, 0, 2, 2359338, 0, 2, 2359339, 0, 2, 2359340, 0, 2, 2359341, 0, 2, 2359342, 0, 2, 2359343, 0, 2, 2359344, 0, 2, 2359345, 0, 2, 2359346, 0, 2, 2359347, 0, 2, 2359348, 0, 2, 2359349, 0, 2, 2359350, 0, 2, 1179651, 0, 2, 1376259, 0, 2, 1179704, 0, 2, 1376312, 0, 2, 262147, 0, 2, 327683, 0, 2, 393219, 0, 2, 458755, 0, 2, 524291, 0, 2, 589827, 0, 2, 655363, 0, 2, 720899, 0, 2, 786435, 0, 2, 851971, 0, 2, 917507, 0, 2, 983043, 0, 2, 1048579, 0, 2, 1114115, 0, 2, 1441795, 0, 2, 1507331, 0, 2, 1572867, 0, 2, 1638403, 0, 2, 1703939, 0, 2, 1769475, 0, 2, 1835011, 0, 2, 2293763, 0, 2, 2359299, 0, 2, 2228227, 0, 2, 2162691, 0, 2, 2097155, 0, 2, 2031619, 0, 2, 1966083, 0, 2, 1900547, 0, 2, 2359300, 0, 2, 262200, 0, 2, 327736, 0, 2, 393272, 0, 2, 458808, 0, 2, 524344, 0, 2, 589880, 0, 2, 655416, 0, 2, 720952, 0, 2, 1048632, 0, 2, 917560, 0, 2, 852024, 0, 2, 983096, 0, 2, 1114168, 0, 2, 786488, 0, 2, 1441848, 0, 2, 1507384, 0, 2, 1572920, 0, 2, 1638456, 0, 2, 1703992, 0, 2, 1769528, 0, 2, 1835064, 0, 2, 1900600, 0, 2, 1966136, 0, 2, 2031672, 0, 2, 2097208, 0, 2, 2162744, 0, 2, 2228280, 0, 2, 2293816, 0, 2, 2359352, 0, 2, 196611, 0, 2, 196612, 0, 2, 196613, 0, 2, 196614, 0, 2, 196615, 0, 2, 196616, 0, 2, 196617, 0, 2, 196618, 0, 2, 196619, 0, 2, 196620, 0, 2, 196621, 0, 2, 196622, 0, 2, 196623, 0, 2, 196624, 0, 2, 196625, 0, 2, 196626, 0, 2, 196627, 0, 2, 196628, 0, 2, 196629, 0, 2, 196630, 0, 2, 196631, 0, 2, 196632, 0, 2, 196633, 0, 2, 196634, 0, 2, 196635, 0, 2, 196636, 0, 2, 196639, 0, 2, 196640, 0, 2, 196641, 0, 2, 196642, 0, 2, 196643, 0, 2, 196644, 0, 2, 196645, 0, 2, 196646, 0, 2, 196647, 0, 2, 196648, 0, 2, 196649, 0, 2, 196650, 0, 2, 196651, 0, 2, 196652, 0, 2, 196653, 0, 2, 196654, 0, 2, 196655, 0, 2, 196656, 0, 2, 196657, 0, 2, 196658, 0, 2, 196659, 0, 2, 196660, 0, 2, 196661, 0, 2, 196662, 0, 2, 196663, 0, 2, 196664, 0, 2)

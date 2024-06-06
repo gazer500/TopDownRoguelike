@@ -14,6 +14,7 @@ text = "hello"
 label = NodePath("Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+z_index = -1
 texture = ExtResource("2_a0pc1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

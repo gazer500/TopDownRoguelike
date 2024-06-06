@@ -9,6 +9,8 @@
 size = Vector2(8, 8)
 
 [node name="SmallSlime" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_s53td")
 move_speed = 25
 

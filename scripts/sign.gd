@@ -6,3 +6,4 @@ class_name Sign
 func _ready():
 	if label != null:
 		label.text = text
+	super._ready()

@@ -2,6 +2,8 @@ extends StateMachine
 class_name PlayerSM
 
 var player : Player
+@onready var death_effect := preload("res://scenes/death_effect.tscn")
+
 
 func _ready():
 	add_state("idle")
@@ -53,9 +55,10 @@ func _enter_state(new_state, old_state):
 		states.walk:
 			player.get_node("AnimatedSprite2D").play("walk")
 		states.dead:
-			player.get_node("AnimatedSprite2D").play("death")
+			player.hide()
+			var instance = death_effect.instantiate()
+			instance.global_position = parent.global_position
+			player.add_sibling(instance)
 
 
-func _on_animation_finished():
-	if player.get_node("AnimatedSprite2D").get_animation() == "death":
-		player.hide()
+

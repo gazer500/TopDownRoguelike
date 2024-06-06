@@ -30,9 +30,6 @@ enum AttackTypes {
 var _on_cooldown := false
 
 
-
-
-
 func _physics_process(delta):
 	var fire_button_active = (
 		(Input.is_action_just_pressed("left_click") and attack_type == AttackTypes.ATTACK_MANUAL)
